@@ -1,0 +1,20 @@
+name: B端创建手动标签
+base_url: http://master.saas.weimobqa.com
+variables:
+    PC_Cookie: rprm_cuid=894421020denkfcj3aq8; authDataType_qa=saas; rprm_cuid_time=; saas.console.session=s%3AJlyhVXAVSx-A_mP3u10ZwZDZueE1JtYS.iKlmAS8M2NpOzMhKYb96IAaPdd%2FAruI4L8DgaZYXejs; saasAuthData_qa=a1d46be7cb770990bbf28eaa1a2960a34d3ac7631ee98f8d911fdbbf12fa88e8
+    Authorization :  Bearer a1d46be7cb770990bbf28eaa1a2960a34d3ac7631ee98f8d911fdbbf12fa88e8
+    tagName: tag123
+request:
+    url: /api3/newo2o/gateway/member/v1.0/tag/createManualTag
+    method: POST
+    headers:
+      channel-type: pc
+      Content-Type: application/json;charset=UTF-8
+      Cookie: ${PC_Cookie}
+      is-debug: 'false'
+      Authorization: $Authorization
+    json:
+      pid: "280"
+      merchantId: "280"
+      merchantWid: 2995903
+      tagName: $tagName

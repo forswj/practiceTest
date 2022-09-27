@@ -1,0 +1,41 @@
+config:
+    name: testcase description
+    variables: {}
+teststeps:
+-   name: /transaction
+    request:
+        data: '[{"trace_id":"ea6e08eb-5b27-442e-944d-be520306df38","span_id":"a5968efd-f0fe-94b1-80a8-a6b976f5a9","parent_id":"68eab3b3-058b-2d29-b35e-501ee76ac5","service":"saas-fe-unknown-node-http-xhr","name":"http.xhr","type":"xhr","start":1605702907857,"duration":141,"resource":"POST
+            /api3/newo2o/notice/getunreadcount","meta":{"http":{"method":"POST","url":"http://o2o.console.saas.weimobqa.com/api3/newo2o/notice/getunreadcount","headers":{"Accept":"application/json,
+            text/plain, */*","Content-Type":"application/json;charset=utf-8","Authorization":"Bearer
+            96c297fb4f4deb851dc967f4ad1572c840993f8a0e54e3144ce79d78ce267bd8","Apiclient":"ticket-pc","is-debug":false,"channel-type":"pc","Accept-Language":"zh-CN","Referer":"http://master.saas.weimobqa.com/","Cookie":"rprm_cuid=599270861lnjedunfbqg;
+            saasAuthData_qa=96c297fb4f4deb851dc967f4ad1572c840993f8a0e54e3144ce79d78ce267bd8;
+            authDataType_qa=saas; aid=280; O2O-tencentqa_osessionid=bf5b7d7c82404443bedc8a26d747d382;
+            rprm_appShowId2=-khndxbd8zowc7nvpxtg"},"status_code":200,"user":{"business":"o2o","statType":"saaspath","cuid":"599270861lnjedunfbqg"}},"response":{"headers":{"cache-control":"no-cache","content-length":"52","content-type":"application/json;charset=UTF-8","date":"Wed,
+            18 Nov 2020 12:35:08 GMT","expires":"Thu, 01 Jan 1970 00:00:01 GMT","proxy-connection":"Keep-alive","vary":"X-HTTP-Method-Override,
+            Accept-Encoding","x-apm-trace-id":"ea6e08eb-5b27-442e-944d-be520306df38","x-proxy-node":"1.0","x-response-time":"115.715ms","x-rprm-v":"node-128"}}},"beat":{"agent":"dom","rprm_v":"h5-120-hound","environment":"qa"},"error":0},{"trace_id":"d5353a2d-4c5d-482a-8331-420bffc9f5a4","span_id":"f8c9239a-ff94-c30a-7add-1f6dda3147","parent_id":"68eab3b3-058b-2d29-b35e-501ee76ac5","service":"saas-fe-unknown-node-http-xhr","name":"http.xhr","type":"xhr","start":1605702908513,"duration":119,"resource":"POST
+            /api3/newo2o/api/notice/readnotice","meta":{"http":{"method":"POST","url":"http://o2o.console.saas.weimobqa.com/api3/newo2o/api/notice/readnotice","headers":{"Content-Type":"application/json;charset=utf-8","pid":"280","is-debug":false,"Accept":"application/json,
+            text/plain, */*","Authorization":"Bearer 96c297fb4f4deb851dc967f4ad1572c840993f8a0e54e3144ce79d78ce267bd8","Apiclient":"ticket-pc","channel-type":"pc","Accept-Language":"zh-CN","Referer":"http://master.saas.weimobqa.com/","Cookie":"rprm_cuid=599270861lnjedunfbqg;
+            saasAuthData_qa=96c297fb4f4deb851dc967f4ad1572c840993f8a0e54e3144ce79d78ce267bd8;
+            authDataType_qa=saas; aid=280; O2O-tencentqa_osessionid=bf5b7d7c82404443bedc8a26d747d382;
+            rprm_appShowId2=-khndxbd8zowc7nvpxtg"},"status_code":200,"user":{"business":"o2o","statType":"saaspath","cuid":"599270861lnjedunfbqg"}},"response":{"headers":{"cache-control":"no-cache","content-length":"205","content-type":"application/json;charset=UTF-8","date":"Wed,
+            18 Nov 2020 12:35:08 GMT","expires":"Thu, 01 Jan 1970 00:00:01 GMT","proxy-connection":"Keep-alive","vary":"X-HTTP-Method-Override,
+            Accept-Encoding","x-apm-trace-id":"d5353a2d-4c5d-482a-8331-420bffc9f5a4","x-proxy-node":"1.0","x-response-time":"92.773ms","x-rprm-v":"node-128"}}},"beat":{"agent":"dom","rprm_v":"h5-120-hound","environment":"qa"},"error":0}]'
+        headers:
+            Content-Type: text/plain
+            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+        method: POST
+        url: http://track.weimob.com/transaction
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - application/json; charset=utf-8
+    -   eq:
+        - content.errcode
+        - 0
+    -   eq:
+        - content.errmsg
+        - ok
