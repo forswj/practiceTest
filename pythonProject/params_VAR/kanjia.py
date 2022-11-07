@@ -20,4 +20,17 @@ PASSWORD = "swjswj917"
 # Excel文件路径
 EXCEL_PATH = "./data/cases.xlsx"
 
+# 新建砍价活动返回的报文
+RESCHECK = {
+    "errcode": "0",
+    "errmsg": "编辑成功",
+    "data": 1646982385001,
+    "errData": None,  # Python中要把none改成null
+    "serverTime": 1667819247528,
+    "globalTicket": "8953-1667819244.895-ops-q1-3444-3880195369",
+    "monitorTrackId": "434d01d7-53b0-4e83-a696-23d3626a897a"
+}
+
+
+
 
