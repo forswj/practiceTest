@@ -49,18 +49,18 @@ class WebKeys:
     # 构造函数
     def __init__(self, type_):
         self.driver = open_brower(type_)
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(5)
 
     # 访问url
     def open(self, url):
         self.driver.get(url)
 
-    # 定位元素：一定是要满足各种定位方法，一定要添加return
-    def locator(self, by, value):
-        return self.driver.find_element(by, value)
+    # # 定位元素：一定是要满足各种定位方法，一定要添加return
+    # def locator(self, by, value):
+    #     return self.driver.find_element(by, value)
 
     # 元素定位
-    def locator(self,name,value):
+    def locator(self, name, value):
         el = self.driver.find_element(name,value)
         # 将定位的元素框出来
         self.locator_station(el)
