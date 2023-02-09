@@ -15,7 +15,7 @@ Kanjia_URL = "http://master.saas.weimobqa.com/bos/products/mkBargain/40002550949
 USERNAME = "18068774252"
 
 # 密码
-PASSWORD = "swjswj917"
+PASSWORD = "swj112233"
 
 # Excel文件路径
 EXCEL_PATH = "./data/cases.xlsx"
